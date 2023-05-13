@@ -1,0 +1,52 @@
+@import "generales";
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+}
+
+
+
+
+#slider {
+    display: flex;
+    background-image: url('./IMG/red-mundial.avif');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    img {
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 1s ease;
+    }
+    img.show {
+        opacity: 1;
+    }
+    span#empresa{
+        height: 10rem;
+        margin: 0 auto;
+        backdrop-filter: blur(10px);
+        padding: 1rem;
+        background-color: #00000034;
+        border-radius: 1rem;
+        font-size:20pt ;
+        position: relative;
+        text-align: center;
+        margin-top: 15rem;
+        color: rgb(255, 255, 255);
+        z-index: 10;
+    }
+    
+}

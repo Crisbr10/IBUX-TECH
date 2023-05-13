@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+@mixin posicionamiento($justify-content){
+    display:flex;
+    align-items: center;
+    justify-content: $justify-content;
+}
+header{
+    @include posicionamiento(space-around);
+    width: 100%;
+    height: 7rem;
+    position: fixed;
+    top: 0;
+    z-index: 14;
+    background-color: rgba(75, 74, 74, 0.26);
+    backdrop-filter: blur(20px);
+    img{
+        width: 6rem;
+        height: 6rem;
+        border-radius:1rem;
+    }
+    nav{
+        height: 6rem;
+        width: 60%;
+        @include posicionamiento(space-around);
+    }
+    a{
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        
+        span{
+            padding: 1rem;
+            border:none;
+            border-radius: 1rem;
+            text-align: center;
+        }
+        &:hover{
+            transform: scale(1.2);
+            transition: 0.5s;
+        }
+    }
+    &.scroll {
+        
+        background-color: #33333300;
+
+        a{
+            transition: 1s;
+            color: #000000;
+        }
+        img.menu{
+            filter: invert(1);
+            transition: 1s;
+        }
+       
+    }
+    button{
+        display: none;
+        border:none;
+        background-color: transparent;
+        img{
+            height: 2.5rem;
+            width: 2.5rem;
+        }
+    }
+}
+main{
+    width: 100%;
+    height: calc(100vh - 7rem) ;
+    margin-top: 7rem;
+    .nosotros{
+       
+        
+        text-align: center;
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        hr{
+            width: 80%;
+        }
+        .description{
+            padding: 2rem;
+            width: 95%;
+            border-radius: 1rem;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.466);
+            text-align: center;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+            img{
+                width: 14rem;
+                border-radius: 1rem;
+            }
+            .text{
+                width: 60%;
+                padding-top: 1rem;
+                
+            }
+        }
+    }
+}
+
+#menu{
+    margin-top: -100vh;
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 25;
+    background-color: #0000008e;
+    backdrop-filter: blur(20px);
+    nav{
+        margin-top: -10vh;
+        height: 80vh;
+        width: 100%;
+        @include posicionamiento(center);
+        flex-direction: column;
+        gap: 5rem;
+        a{
+            color: white;
+            text-decoration: none;
+            
+            span{
+                
+                padding: 1rem;
+                border:none;
+                border-radius: 1rem;
+                
+            }
+            &:hover{
+                transform: scale(1.2);
+                transition: 0.3s;
+            }
+        }
+    }
+    button{
+        border: none;
+        background-color:transparent;
+        margin-left: 87%;
+        margin-top: 2vh;
+        img{
+            height: 2.5rem;
+            width: 2.5rem;
+        }
+        
+    }
+}
+
+
+
+footer{
+    margin-top: 4rem;
+    padding: 20px;
+    display:flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 15rem;
+    background-color: #00000060;
+    .contacto{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        width: 20%;
+        height: 100%;
+        text-align: center;
+        h3{
+            text-transform: uppercase;
+            
+        }
+        span{
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            img{
+                width: 20px;
+            }
+        }
+    }
+    #contactoFooter{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        width: 20%;
+        height: 100%;
+        text-align: center;
+        h3{
+            text-transform: uppercase;
+            
+        }
+        span{
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            img{
+                width: 20px;
+            }
+        }
+    }
+
+    .fundacion{
+        display: flex;
+        flex-direction: column;
+        img{
+            width: 12rem;
+        }
+    }
+    
+
+}
+
+@media(max-width:600px){
+    header{
+        justify-content: space-between;
+        img{
+            margin-left: 3rem;
+        }
+        nav{
+            display: none;
+        }
+        button{
+            margin-right: 2rem;
+            display: block;
+        }
+    }
+
+    .contacto{
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 2rem;
+
+        .mapa-contacto{
+            width: 100%;
+            align-items: center;
+            .datos-contacto{
+                flex-direction: column;
+                align-items: start;
+            }
+        }
+        iframe{
+            width: 80%;
+            height: 15rem;
+        }
+       
+    }
+
+
+    main{
+        .nosotros{
+            
+            .description{
+                text-align: center;
+                margin-top: 2rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                img{
+                    border-radius: 1rem;
+                }
+                .text{
+                    width: 80%;
+                    padding-top: 1rem;
+                    
+                }
+            }
+        }
+        
+    }
+    footer{
+        padding: 20px;
+        flex-direction: column;
+        align-items: center;
+        height: 50vh;
+        gap: 2rem;
+        .contacto{
+            width: 100%;
+        }
+        #contactoFooter{
+            width: 100%;
+        }
+        .fundacion{
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+}
